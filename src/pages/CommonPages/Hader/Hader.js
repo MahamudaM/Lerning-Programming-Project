@@ -4,7 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaChalkboardTeacher} from "react-icons/fa";
-import RightSideNav from '../../../Courses/RightSideNav/RightSideNav';
+
+import RightSideNav from '../../../Courses/LeftSideNav/LeftSideNav';
 const Hader = () => {
     return (
         <Navbar collapseOnSelect className='mb-4' expand="lg" bg="light" variant="light">
@@ -28,6 +29,7 @@ const Hader = () => {
             </NavDropdown>
           </Nav>
           <Nav>
+          <Nav.Link href={`/course`}>courses</Nav.Link>
             <Nav.Link href="#deets">FAQ</Nav.Link>
             <Nav.Link href="#deets">BLOG</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">

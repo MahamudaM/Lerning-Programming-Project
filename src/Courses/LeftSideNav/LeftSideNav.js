@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const RightSideNav = () => {
+const LeftSideNav = () => {
     const [courses,setCourses]=useState([])
     useEffect(()=>{
 fetch('http://localhost:5000/courses')
@@ -10,14 +10,14 @@ fetch('http://localhost:5000/courses')
     },[])
     return (
         <div>
-           <h1>data : {courses.length}</h1> 
+           
            {
             courses.map(course=><p key={course.id}>
-                <Link to={`/course/${course.id}`}>{course.name}</Link>
+                <Link to={`/courses/${course.id}`}>{course.name}</Link>
             </p>)
            }
       </div>
     );
 };
 
-export default RightSideNav;
+export default LeftSideNav;
