@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaChalkboardTeacher} from "react-icons/fa";
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 import RightSideNav from '../../../Courses/LeftSideNav/LeftSideNav';
 const Hader = () => {
+  const {user}=useContext(AuthContext)
     return (
         <Navbar collapseOnSelect className='mb-4' expand="lg" bg="light" variant="light">
       <Container>
@@ -30,6 +32,7 @@ const Hader = () => {
           </Nav>
           <Nav>
           <Nav.Link href={`/course`}>courses</Nav.Link>
+          <Nav.Link href="#deets">{user?.displayName}</Nav.Link>
             <Nav.Link href="#deets">FAQ</Nav.Link>
             <Nav.Link href="#deets">BLOG</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
