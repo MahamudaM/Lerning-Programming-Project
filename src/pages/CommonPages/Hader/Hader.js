@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button, Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -27,26 +27,31 @@ const Hader = () => {
       }
     </Tooltip>
   );
+
+  // light and drak mode 
+  const [theme, setTheme] = useState('light');
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  };
+  useEffect(() => {
+    document.body.className = theme;
+    console.log(document.body.className)
+  }, [theme]);
     return (
-        <Navbar collapseOnSelect className='mb-4' expand="lg" bg="light" variant="light">
+        <Navbar collapseOnSelect  expand="lg" bg="light" variant="light" >
       <Container>
         <Navbar.Brand className='fs-3'><FaChalkboardTeacher></FaChalkboardTeacher></Navbar.Brand>
+        <Navbar.Brand >Learn Programming</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link className="text-uppercase fw-bold fs-4">Learn Programming</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+
+           
+
           </Nav>
           <Nav>
           <Nav.Link href={`/course`}>courses</Nav.Link>
@@ -54,14 +59,15 @@ const Hader = () => {
             {
           user?.uid?
           <>
-          <span>{user?.displayName}</span>
-          <Button onClick={logOutHandle} variant="outline-success">Log out</Button>{' '}
+          {/* <span>{user?.displayName}</span>           */}
+          {/* <Button onClick={logOutHandle} variant="outline-success">Log out</Button>{' '} */}
+          <Nav.Link href="#deets" onClick={logOutHandle} >Log out</Nav.Link>
           </>
           :
-          <>
-          <Link to='/login'>login</Link>
-          <Link to='/register'>Register</Link>
-          </>
+          <div >
+          <Link to='/login' className="me-2">login</Link>
+          <Link to='/register'>Register</Link>          
+          </div>
           }
           </Nav.Link>
           {/* tooltip */}
@@ -82,9 +88,14 @@ const Hader = () => {
           {/* <Nav.Link href="/login">Sig in </Nav.Link> */}
             <Nav.Link href="#deets">FAQ</Nav.Link>
             <Nav.Link href="#deets">BLOG</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-            toggle theme
-            </Nav.Link>
+            {/* light and drak mode */}
+            {/* <div className={`Hader ${theme}`}> */}
+      <button onClick={toggleTheme}>Toggle Theme</button>
+      
+    {/* </div> */}
+            {/* <Nav.Link eventKey={2} href="#memes"  onClick={toggleTheme}>
+            Toggle Theme
+            </Nav.Link> */}
           </Nav>
           <div className='d-lg-none'>
             <RightSideNav></RightSideNav>

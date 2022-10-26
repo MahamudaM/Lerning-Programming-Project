@@ -8,10 +8,15 @@ const AuthProvider = ({children}) => {
 const[user,setUser]=useState(null)
 // handle page loading
 const[loader,setLoader]=useState(true)
-
+// sign in with google
 const loginProvider=(provider)=>{
     setLoader(true)
     return signInWithPopup(auth,provider);
+}
+// login with github
+const logInWithGithub=(provider)=>{
+    setLoader(true)
+    return signInWithPopup(auth,provider)
 }
 // log out
 const logOut=()=>{
@@ -44,7 +49,7 @@ return ()=>{
 }
 },[])
 // auth value
-const AuthInfo={user,loginProvider,logOut,creatUserEmailPasswod,signIn,loader,updateUserProfile};
+const AuthInfo={user,loginProvider,logInWithGithub,logOut,creatUserEmailPasswod,signIn,loader,updateUserProfile};
     return (
         <AuthContext.Provider value={AuthInfo}>
                     {children}

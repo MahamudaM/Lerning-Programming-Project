@@ -9,7 +9,15 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+/* derk and light css */
+.dark {
+  background-color: #333;
+  color: rgb(150, 144, 144);
+}
+.light {
+  background-color: #fff;
+  color: #333;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

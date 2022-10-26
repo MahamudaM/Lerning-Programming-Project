@@ -15,7 +15,7 @@ const CourseLayoutCart = ({courseCart}) => {
               <Card.Text>
                 {
                     details?.blog.length>80?
-                    <p>{details?.blog.slice(0,80) + '.....'} <Link to={`/courses/${id}`}>Read More</Link></p>
+                    <p>{details?.blog.slice(0,80) + '.....'} <Link to={`/courses/${id}`}>Details</Link></p>
                 :<p>{details?.blog}</p>
                 }
               </Card.Text>

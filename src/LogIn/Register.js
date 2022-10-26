@@ -52,8 +52,8 @@ const Register = () => {
              <Form onSubmit={handleFormSubmit} className='w-50 aling-cneter'>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Name</Form.Label>
-        <Form.Control type="text" name="name" placeholder="name" />
+        <Form.Label>Full name</Form.Label>
+        <Form.Control type="text" name="name" placeholder="Full name" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Image URL</Form.Label>
@@ -84,7 +84,7 @@ const Register = () => {
       </Button>
      
     </Form>
-    <small>Already have a acount <Link to='/login'>login</Link> </small>
+    <small>Already have a acount?<Link to='/login'>Log In</Link> </small>
         </div>
     );
 };
