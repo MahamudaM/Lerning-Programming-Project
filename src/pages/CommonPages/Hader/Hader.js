@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, Image } from 'react-bootstrap';
+import { Button, Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -16,6 +16,17 @@ const Hader = () => {
     .then(()=>{})
     .catch(error=>console.log(error))
   }
+  // user name tooltip
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+    
+      {
+         
+       user?.displayName? `${user?.displayName}` : 'no user'
+      
+      }
+    </Tooltip>
+  );
     return (
         <Navbar collapseOnSelect className='mb-4' expand="lg" bg="light" variant="light">
       <Container>
@@ -53,13 +64,21 @@ const Hader = () => {
           </>
           }
           </Nav.Link>
+          {/* tooltip */}
+          <OverlayTrigger
+      placement="right"
+      delay={{ show: 250, hide: 400 }}
+      overlay={renderTooltip}
+    >
           <Nav.Link href="#deets">
           {user?.photoURL?
           <Image style={{height:'30px'}} roundedCircle src={user.photoURL}></Image>
           :<FaUser></FaUser>
-        }
-            
+        }            
           </Nav.Link>
+          </OverlayTrigger>
+
+
           {/* <Nav.Link href="/login">Sig in </Nav.Link> */}
             <Nav.Link href="#deets">FAQ</Nav.Link>
             <Nav.Link href="#deets">BLOG</Nav.Link>

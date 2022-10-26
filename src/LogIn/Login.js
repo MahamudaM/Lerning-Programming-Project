@@ -5,7 +5,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import Form from 'react-bootstrap/Form';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
@@ -71,6 +71,7 @@ const loginHandler=e=>{
         login
       </Button>
     </Form>
+    <small>No acount </small><Link to='/register'>Creat first</Link>
         </div>
          
     );

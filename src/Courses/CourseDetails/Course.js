@@ -20,7 +20,7 @@ const Course = () => {
      {details?.blog}
    </Card.Text>
    <Link to='/checkOut'>
-   <Button variant="primary">Checkout</Button>
+   <Button variant="primary">Get premium access</Button>
    </Link>
    
  </Card.Body>
