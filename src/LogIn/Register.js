@@ -1,9 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 import  { AuthContext } from '../Context/AuthProvider/AuthProvider';
 const Register = () => {
+    const navigate=useNavigate()
     const {creatUserEmailPasswod}=useContext(AuthContext)
+    const [error,setError]=useState('');
+
     const handleFormSubmit=(e)=>{
         e.preventDefault()
         const form=e.target;
@@ -11,14 +15,19 @@ const Register = () => {
         const imageURL = form.imageURL.value;
         const email= form.email.value;
         const password=form.password.value
-        console.log(name,email,password)
+        console.log(name,email,password,imageURL)
         creatUserEmailPasswod(email,password)
         .then(result=>{
             const user = result.user;
             console.log(user)
             form.reset()
+            setError('')
+            navigate('/')
         })
-        .catch(error=>console.error(error))
+        .catch(error=>{
+            console.error(error);
+            setError(error.message)
+        })
     }
     return (
         <div>
@@ -43,8 +52,8 @@ const Register = () => {
       </Form.Group>
       
       <Form.Text className="text-danger">
-          We'll never share your email with anyone else.
-        </Form.Text>
+         {error}
+        </Form.Text><br/>
         <Button variant="primary" type="submit">
       Register
       </Button>
