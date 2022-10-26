@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 
 const Course = () => {
     const coursesDetals=useLoaderData()
-    const {id,name,details,price,enroll_student,img} = coursesDetals
+    const {id,name,details,price,enroll_student,img,Syllabus} = coursesDetals
     console.log(coursesDetals)
 
     return (
@@ -32,6 +32,10 @@ const Course = () => {
    <Card.Text>
      {details?.blog}
    </Card.Text>
+   <div>
+   <span>{details.published_date}</span>
+    <span>{Syllabus}</span>
+   </div>
    <Link to={`/checkOut/${id}`}>
    <Button variant="primary">Get premium access</Button>
    </Link>

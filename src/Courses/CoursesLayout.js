@@ -18,6 +18,7 @@ const courseCarts = useLoaderData()
                     </Col>
                       <Col lg="8">
                       <Row xs={1} md={2} className="g-4">
+                        <h1>popular courses</h1>
                       {
             courseCarts.map(courseCart=><CourseLayoutCart key={courseCart.id} courseCart={courseCart}>
                 

@@ -22,7 +22,7 @@ const Hader = () => {
     
       {
          
-       user?.displayName? `${user?.displayName}` : 'no user'
+       user?.displayName? `${user?.displayName}` : 'no user login'
       
       }
     </Tooltip>
@@ -61,7 +61,8 @@ const Hader = () => {
           <>
           {/* <span>{user?.displayName}</span>           */}
           {/* <Button onClick={logOutHandle} variant="outline-success">Log out</Button>{' '} */}
-          <Nav.Link href="#deets" onClick={logOutHandle} >Log out</Nav.Link>
+          {/* <Nav.Link href="#deets" onClick={logOutHandle} >Log out</Nav.Link> */}
+          <p onClick={logOutHandle}>Log out</p>
           </>
           :
           <div >
@@ -87,7 +88,7 @@ const Hader = () => {
 
           {/* <Nav.Link href="/login">Sig in </Nav.Link> */}
             <Nav.Link href="#deets">FAQ</Nav.Link>
-            <Nav.Link href="#deets">BLOG</Nav.Link>
+            <Nav.Link href="/blog">BLOG</Nav.Link>
             {/* light and drak mode */}
             {/* <div className={`Hader ${theme}`}> */}
       <button onClick={toggleTheme}>Toggle Theme</button>
