@@ -6,7 +6,8 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import Form from 'react-bootstrap/Form';
 const Login = () => {
-    const {loginProvider}=useContext(AuthContext);
+    const {loginProvider,signIn}=useContext(AuthContext);
+    // sing in with google
 const googleProvider=new GoogleAuthProvider()
 const handleGoogleSignIn=()=>{
     loginProvider(googleProvider)
@@ -16,6 +17,22 @@ const handleGoogleSignIn=()=>{
     })
     .catch(error=>console.error(error))
 }
+//form login with email and password
+const loginHandler=e=>{
+    e.preventDefault();
+    const form=e.target;
+    const email= form.email.value;
+    const password=form.password.value;
+    console.log(email,password)
+    signIn(email,password)
+    .then(result=>{
+        const user = result.user;
+        console.log(user)
+        form.reset()
+    })
+    .catch(error=>console.error(error))
+}
+
     return (
         <div>
              <ButtonGroup vertical>
@@ -23,23 +40,23 @@ const handleGoogleSignIn=()=>{
              <Button  variant="outline-info"><FaGithub></FaGithub>GitHub</Button>{' '}
       </ButtonGroup>
       {/* login form */}
-        <Form className='w-50 aling-cneter'>
+        <Form onSubmit={loginHandler} className='w-50 aling-cneter'>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
+        <Form.Control type="email" name='email' placeholder="Enter email" required/>
         
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
+        <Form.Control type="password" name="password" placeholder="Password" required/>
       </Form.Group>
       
       <Form.Text className="text-danger">
           We'll never share your email with anyone else.
         </Form.Text>
         <Button variant="primary" type="submit">
-        Submit
+        login
       </Button>
     </Form>
         </div>
