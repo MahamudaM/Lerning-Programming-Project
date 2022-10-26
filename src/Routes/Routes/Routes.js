@@ -3,6 +3,8 @@ import Home from "../../pages/Home";
 import Main from "../../Layouts/Main";
 import CoursesLayout from "../../Courses/CoursesLayout";
 import Course from "../../Courses/CourseDetails/Course";
+import Login from "../../LogIn/Login";
+import Register from "../../LogIn/Register";
 
 export const routes = createBrowserRouter([
     {
@@ -28,6 +30,14 @@ export const routes = createBrowserRouter([
                 loader:()=>fetch(`http://localhost:5000/courses`)
                 
 
+            },
+            {
+                path:'/login',
+                element:<Login></Login>
+            },
+            {
+                path:'/register',
+                element:<Register></Register>
             }
         ]
     }
