@@ -9,6 +9,7 @@ import CheckOut from "../../pages/CheckOut/CheckOut";
 import PrivateRoutes from "../Private routes/PrivateRoutes";
 import TermsAndCondition from "../../pages/TermsAndCondition/TermsAndCondition";
 import Blog from "../../pages/Blog/Blog";
+import FAQ from "../../FAQ/FAQ";
 
 export const routes = createBrowserRouter([
     {
@@ -55,6 +56,10 @@ export const routes = createBrowserRouter([
             {
                 path:'/blog',
                 element:<Blog></Blog>
+            },
+            {
+                path:'/faq',
+                element:<FAQ></FAQ>
             }
 
 

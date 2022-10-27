@@ -20,7 +20,8 @@ const handleGoogleSignIn=()=>{
     loginProvider(googleProvider)
     .then(result=>{
         const user=result.user;
-        console.log(user)
+       console.log(user)
+       navigate(from,{replace:true});
     })
     .catch(error=>console.error(error))
 }
@@ -31,6 +32,7 @@ const githubHandler=()=>{
     .then(result=>{
         const user =result.user;
         console.log(user)
+        navigate(from,{replace:true});
     })
     .catch(error=>console.error(error))
 }
@@ -57,12 +59,19 @@ const loginHandler=e=>{
 
     return (
         <div>
-             <ButtonGroup vertical>
-             <Button onClick={handleGoogleSignIn} variant="outline-info" className='mb-4'><FaGoogle></FaGoogle>google</Button>{' '}
-             <Button onClick={githubHandler}  variant="outline-info"><FaGithub></FaGithub>GitHub</Button>{' '}
+    <div className='my-5' >
+   <div className='text-center mb-4'>
+    
+   <ButtonGroup vertical >
+             <Button onClick={handleGoogleSignIn} variant="outline-info" className='mb-4'><FaGoogle className='me-2'></FaGoogle>Sign in with Google</Button>{' '}
+             <Button onClick={githubHandler}  variant="outline-info"><FaGithub className='me-2'></FaGithub>Sign in with GitHub</Button>{' '}
       </ButtonGroup>
+   </div>
+  
       {/* login form */}
-        <Form onSubmit={loginHandler} className='w-50 aling-cneter'>
+    <div style={{width:'35rem'}} className=' border border-2 rounded mx-auto p-5 d-flex  flex-column '>
+    <Form onSubmit={loginHandler}>
+    <h3 className='text-center'>LOG IN </h3>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" name='email' placeholder="Enter email" required/>
@@ -77,11 +86,15 @@ const loginHandler=e=>{
       <Form.Text className="text-danger">
         {error}
         </Form.Text><br/>
-        <Button variant="primary" type="submit">
-        login
-      </Button>
+        <Button variant="info" type="submit">
+        Log in
+      </Button><br/>
+      <small>No acount?<Link to='/register'>Register first</Link> </small>
     </Form>
-    <small>No acount? </small><Link to='/register'>Register first</Link>
+    </div>
+    
+    
+    </div>
         </div>
          
     );

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Accordion } from 'react-bootstrap';
 
-const Blog = () => {
+const FAQ = () => {
     return (
-       <div>
-         <Accordion className='mx-auto my-5' style={{width:'35rem'}}>
+        <div>
+               <Accordion className='mx-auto my-5' style={{width:'35rem'}}>
         <Accordion.Item eventKey="0">
           <Accordion.Header> what is cors?</Accordion.Header>
           <Accordion.Body>
@@ -35,8 +35,8 @@ While spawning threads incurs less memory and CPU overhead than forking processe
         </Accordion.Item>
 
       </Accordion>
-       </div>
+        </div>
     );
 };
 
-export default Blog;
+export default FAQ;

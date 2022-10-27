@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const CourseLayoutCart = ({courseCart}) => {
     const {name,img,details,id}=courseCart
-    console.log(courseCart)
+   
     return (
         <div>
              <Col>
-          <Card>
+          <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={img} />
             <Card.Body>
               <Card.Title>{name}</Card.Title>

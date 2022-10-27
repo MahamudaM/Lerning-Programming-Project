@@ -22,7 +22,7 @@ const Hader = () => {
     
       {
          
-       user?.displayName? `${user?.displayName}` : 'no user login'
+       user?.displayName? `${user?.displayName}` : 'no user name'
       
       }
     </Tooltip>
@@ -44,8 +44,8 @@ const Hader = () => {
     return (
         <Navbar collapseOnSelect  expand="lg" bg="light" variant="light" >
       <Container>
-        <Navbar.Brand className='fs-3'><FaChalkboardTeacher></FaChalkboardTeacher></Navbar.Brand>
-        <Navbar.Brand >Learn Programming</Navbar.Brand>
+        <Navbar.Brand className='fs-3 text-info '><FaChalkboardTeacher ></FaChalkboardTeacher></Navbar.Brand>
+        <Navbar.Brand className='text-info fw-bold fs-3'>Learn Programming</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -65,9 +65,9 @@ const Hader = () => {
           <p onClick={logOutHandle}>Log out</p>
           </>
           :
-          <div >
-          <Link to='/login' className="me-2">login</Link>
-          <Link to='/register'>Register</Link>          
+          <div className='text-drak'>
+          <Link to='/login' className="me-2 text-decoration-none text-dark">login</Link>
+          <Link to='/register' className='text-decoration-none text-dark'>Register</Link>          
           </div>
           }
           </Nav.Link>
@@ -86,17 +86,15 @@ const Hader = () => {
           </OverlayTrigger>
 
 
-          {/* <Nav.Link href="/login">Sig in </Nav.Link> */}
-            <Nav.Link href="#deets">FAQ</Nav.Link>
+          
+            <Nav.Link href="/faq">FAQ</Nav.Link>
             <Nav.Link href="/blog">BLOG</Nav.Link>
             {/* light and drak mode */}
-            {/* <div className={`Hader ${theme}`}> */}
-      <button onClick={toggleTheme}>Toggle Theme</button>
+           
+      <button className="btn btn-outline-info" onClick={toggleTheme}>Toggle Theme</button>
       
     {/* </div> */}
-            {/* <Nav.Link eventKey={2} href="#memes"  onClick={toggleTheme}>
-            Toggle Theme
-            </Nav.Link> */}
+           
           </Nav>
           <div className='d-lg-none'>
             <RightSideNav></RightSideNav>

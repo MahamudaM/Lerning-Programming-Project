@@ -48,8 +48,8 @@ const Register = () => {
       setCheckTerms(e.target.checked)
     }
     return (
-        <div>
-             <Form onSubmit={handleFormSubmit} className='w-50 aling-cneter'>
+        <div style={{width:'35rem'}} className=' border border-2 rounded mx-auto p-5 d-flex  flex-column my-5'>
+             <Form onSubmit={handleFormSubmit} >
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Full name</Form.Label>

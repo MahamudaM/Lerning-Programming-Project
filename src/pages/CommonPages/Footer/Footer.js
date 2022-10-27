@@ -7,24 +7,24 @@ import LeftSideNav from '../../../Courses/LeftSideNav/LeftSideNav';
 
 const Footer = () => {
     return (
-        <div className='bg-dark text-white mb-0'>
+        <div className='bg-dark text-white mb-0 p-3'>
            <div>
 <Container>
 <Row>
     <Col lg='5'>
         <p>About us</p>
-        <p><FaHouzz></FaHouzz> Location:Dhake,Bonani,3/27</p>
-        <p><FaPhone></FaPhone>phone:+088349994</p>
-        <p><FaEnvelope></FaEnvelope>Email:Jhon@s23ads.com</p>
+        <p ><FaHouzz className="me-2 mb-0 "></FaHouzz> Location:Dhake,Bonani,3/27</p>
+        <p ><FaPhone className="me-2"></FaPhone>phone:+088349994</p>
+        <p ><FaEnvelope className="me-2"></FaEnvelope>Email:Jhon@s23ads.com</p>
 <div className='d-flex flex-row g-3'>
-    <Link to='#'><FaFacebook></FaFacebook></Link>
-    <Link to='#'><FaTwitter></FaTwitter></Link>
-    <Link to='#'><FaLinkedin></FaLinkedin></Link>
-    <Link to='#'><FaInstagram></FaInstagram></Link>
+    <Link to='#' className="me-3 text-white"><FaFacebook></FaFacebook></Link>
+    <Link to='#' className="me-3 text-white"><FaTwitter></FaTwitter></Link>
+    <Link to='#' className="me-3 text-white"><FaLinkedin></FaLinkedin></Link>
+    <Link to='#' className="me-3 text-white"><FaInstagram></FaInstagram></Link>
 </div>
     </Col>
     <Col lg='5'>
-<h3>Quick contact</h3>
+<p>Quick contact</p>
 <Form>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Email address</Form.Label>
@@ -48,7 +48,7 @@ const Footer = () => {
 
            <hr></hr>
            <div className='text-center'>
-            <p>copy right© 2020-21.All right reservse</p>
+            <p>copy right© 2020-21.All right reserv</p>
            </div>
         </div>
     );

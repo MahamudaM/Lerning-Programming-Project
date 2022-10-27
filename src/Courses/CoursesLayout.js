@@ -11,19 +11,22 @@ const courseCarts = useLoaderData()
 
     return (
         <div>
-            <Container>
+            <Container className='my-5'>
+            <h1 className='text-center mb-5'>popular courses</h1>
                 <Row>
                 <Col lg="4" className='d-none d-lg-block'>
                     <LeftSideNav></LeftSideNav>
                     </Col>
                       <Col lg="8">
-                      <Row xs={1} md={2} className="g-4">
-                        <h1>popular courses</h1>
-                      {
+                      <Row  xs={1} md={2} className="g-4">
+                        
+                  
+                     {
             courseCarts.map(courseCart=><CourseLayoutCart key={courseCart.id} courseCart={courseCart}>
                 
             </CourseLayoutCart>)
            }
+                    
             
             </Row>
                     </Col>

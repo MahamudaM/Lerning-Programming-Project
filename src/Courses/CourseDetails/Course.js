@@ -1,14 +1,15 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-
+import './Course.css'
 // import cart
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import { FaFilePdf } from 'react-icons/fa';
 // pdf
-// import ReactDOM from "react-dom";
-// import Pdf from "react-to-pdf";
-// const ref = React.createRef();
+
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
 
 const Course = () => {
     const coursesDetals=useLoaderData()
@@ -16,28 +17,34 @@ const Course = () => {
     console.log(coursesDetals)
 
     return (
-        <div >
-        <Card style={{ width: '18rem' }}>
-        <Card.Header>Featured
+        <div  className='mx-auto my-5'>
+        <Card  style={{ width: '35rem' }}>
+        <Card.Header><FaFilePdf></FaFilePdf>
 
-          {/* pdf */}
-          {/* <Pdf targetRef={ref} filename="code-example.pdf">
+          {/* pdf part */}
+          <Pdf targetRef={ref} filename="code-example.pdf">
         {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
-      </Pdf> */}
-
+      </Pdf>
+       
            </Card.Header>
- <Card.Img variant="top" src={img} />
+ <Card.Img  variant="top" src={img} ref={ref} />
  <Card.Body >
    <Card.Title>{name}</Card.Title>
    <Card.Text>
      {details?.blog}
    </Card.Text>
-   <div>
-   <span>{details.published_date}</span>
-    <span>{Syllabus}</span>
+   <h5>{Syllabus}</h5>
+   
+    
+   <div className='d-flex justify-content-between'>
+    <div>
+    <p className='mb-0'> {enroll_student} </p>
+    <p>published date : {details.published_date}</p>
+    </div>
+   <h3>price: ${price}</h3>
    </div>
    <Link to={`/checkOut/${id}`}>
-   <Button variant="primary">Get premium access</Button>
+   <Button variant="info">Get premium access</Button>
    </Link>
    
  </Card.Body>
