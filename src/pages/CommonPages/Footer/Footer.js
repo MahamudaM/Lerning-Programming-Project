@@ -12,7 +12,7 @@ const Footer = () => {
 <Container>
 <Row>
     <Col lg='5'>
-        <p>About us</p>
+        <p>About Us</p>
         <p ><FaHouzz className="me-2 mb-0 "></FaHouzz> Location:Dhake,Bonani,3/27</p>
         <p ><FaPhone className="me-2"></FaPhone>phone:+088349994</p>
         <p ><FaEnvelope className="me-2"></FaEnvelope>Email:Jhon@s23ads.com</p>
@@ -48,7 +48,7 @@ const Footer = () => {
 
            <hr></hr>
            <div className='text-center'>
-            <p>copy right© 2020-21.All right reserv</p>
+            <p>copyright © 2022.All rights reserved</p>
            </div>
         </div>
     );

@@ -1,10 +1,12 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
 import  { AuthContext } from '../Context/AuthProvider/AuthProvider';
 const Register = () => {
     const navigate=useNavigate()
+    
+   
     const {creatUserEmailPasswod,updateUserProfile}=useContext(AuthContext)
     const [error,setError]=useState('');
     // accepts terms and condition
@@ -25,8 +27,9 @@ const Register = () => {
             console.log(user)
             form.reset()
             setError('')
-            navigate('/')
+            navigate('/');
             updateUserInfoHandler(name,photoURL)
+            
         })
         .catch(error=>{
             console.error(error);
@@ -48,7 +51,7 @@ const Register = () => {
       setCheckTerms(e.target.checked)
     }
     return (
-        <div style={{width:'35rem'}} className=' border border-2 rounded mx-auto p-5 d-flex  flex-column my-5'>
+        <div style={{width:'50%'}} className=' border border-2 rounded mx-auto p-5 d-flex  flex-column my-5'>
              <Form onSubmit={handleFormSubmit} >
 
       <Form.Group className="mb-3" controlId="formBasicEmail">

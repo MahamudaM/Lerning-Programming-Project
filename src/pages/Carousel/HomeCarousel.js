@@ -7,24 +7,25 @@ const HomeCarousel = () => {
     return (
         <div >
             <Carousel fade>
+          
       <Carousel.Item>
         <img
           className="d-block w-100"
           src={image1}
           alt="First slide"
-          style={{backgroundRepeat: 'no-repeat',backgroundSize: '100%',height:'400px'}}
+          style={{backgroundRepeat: 'no-repeat',backgroundSize: '100%',height:'500px'}}
         />
         <Carousel.Caption>
-          
-          
+        
         </Carousel.Caption>
+        
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
           src={image2}
           alt="Second slide"
-          style={{backgroundRepeat: 'no-repeat',backgroundSize: '100%',height:'400px'}}
+          style={{backgroundRepeat: 'no-repeat',backgroundSize: '100%',height:'500px'}}
         />
 
         <Carousel.Caption>
@@ -36,7 +37,7 @@ const HomeCarousel = () => {
           className="d-block w-100"
           src={image3}
           alt="Third slide"
-          style={{backgroundRepeat: 'no-repeat',backgroundSize: '100%',height:'400px'}}
+          style={{backgroundRepeat: 'no-repeat',backgroundSize: '100%',height:'500px'}}
         />
 
         <Carousel.Caption>

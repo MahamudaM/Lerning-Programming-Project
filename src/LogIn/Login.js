@@ -69,7 +69,7 @@ const loginHandler=e=>{
    </div>
   
       {/* login form */}
-    <div style={{width:'35rem'}} className=' border border-2 rounded mx-auto p-5 d-flex  flex-column '>
+    <div style={{width:'50%'}} className=' border border-2 rounded mx-auto p-5 d-flex  flex-column '>
     <Form onSubmit={loginHandler}>
     <h3 className='text-center'>LOG IN </h3>
       <Form.Group className="mb-3" controlId="formBasicEmail">

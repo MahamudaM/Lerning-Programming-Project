@@ -18,16 +18,16 @@ const Course = () => {
 
     return (
         <div  className='mx-auto my-5'>
-        <Card  style={{ width: '35rem' }}>
-        <Card.Header><FaFilePdf></FaFilePdf>
+        <Card  style={{ width: '50%' }} ref={ref}>
+        <Card.Header>
 
           {/* pdf part */}
           <Pdf targetRef={ref} filename="code-example.pdf">
-        {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+        {({ toPdf }) => <button onClick={toPdf}><FaFilePdf></FaFilePdf>Generate Pdf</button>}
       </Pdf>
        
            </Card.Header>
- <Card.Img  variant="top" src={img} ref={ref} />
+ <Card.Img  variant="top" src={img}  />
  <Card.Body >
    <Card.Title>{name}</Card.Title>
    <Card.Text>

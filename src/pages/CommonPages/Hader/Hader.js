@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Button, Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import {  Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaChalkboardTeacher, FaUser} from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
@@ -91,7 +90,7 @@ const Hader = () => {
             <Nav.Link href="/blog">BLOG</Nav.Link>
             {/* light and drak mode */}
            
-      <button className="btn btn-outline-info" onClick={toggleTheme}>Toggle Theme</button>
+      <button className="btn btn-outline-info " onClick={toggleTheme}>Toggle Theme</button>
       
     {/* </div> */}
            

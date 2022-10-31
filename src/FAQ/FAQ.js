@@ -4,37 +4,55 @@ import { Accordion } from 'react-bootstrap';
 const FAQ = () => {
     return (
         <div>
-               <Accordion className='mx-auto my-5' style={{width:'35rem'}}>
-        <Accordion.Item eventKey="0">
-          <Accordion.Header> what is cors?</Accordion.Header>
+          <h1 className='text-center my-5'>Everything in the course</h1>
+               <Accordion className='mx-auto my-5' style={{width:'50%'}}>
+               <Accordion.Item eventKey="0">
+          <Accordion.Header> What is html?</Accordion.Header>
           <Accordion.Body>
-          Cross-origin resource sharing (CORS) is a browser mechanism which enables controlled access to resources located outside of a given domain. It extends and adds flexibility to the same-origin policy (SOP). However, it also provides potential for cross-domain attacks, if a website's CORS policy is poorly configured and implemented. CORS is not a protection against cross-origin attacks such as cross-site request forgery (CSRF).
+          HTML stands for HyperText Markup Language. It is a standard markup language for web page creation. It allows the creation and structure of sections, paragraphs, and links using HTML elements (the building blocks of a web page) such as tags and attributes.markup language for web page creation. It allows the creation and structure of sections, paragraphs, and links using HTML elements (the building blocks of a web page) such as tags and attributes.
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="1">
-          <Accordion.Header> Why are you using firebase? What other options do you have to implement authentication?</Accordion.Header>
+          <Accordion.Header>What is css?</Accordion.Header>
           <Accordion.Body>
-          Firebase Analytics gives you undeniable insight into user behavior. You can use this knowledge to make informed decisions about how to market your app better and to reach out to the audiences that you want to target. The unique features it offers also allows you to analyze the performance of your campaigns across organic and paid channels to understand which methods are most effective in regards to the specific users that you want to reach.
-          Cookie-Based authentication,Token-Based authentication,Third party access(OAuth, API-token),OpenId,SAML.
+          CSS stands for Cascading Style Sheets. CSS describes how HTML elements are to be displayed on screen, paper, or in other media. CSS saves a lot of work. It can control the layout of multiple web pages all at once.
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="2">
+          <Accordion.Header>what is React?</Accordion.Header>
+          <Accordion.Body>
+          React is a JavaScript library for building user interfaces.React is used to build single-page applications. React allows us to create reusable UI components.
+          </Accordion.Body>
+        </Accordion.Item>
+
+        <Accordion.Item eventKey="3">
+          <Accordion.Header> what is Javascript?</Accordion.Header>
+          <Accordion.Body>
+          JavaScript is a scripting or programming language that allows you to implement complex features on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. It is the third layer of the layer cake of standard web technologies, two of which (HTML and CSS) we have covered in much more detail in other parts of the Learning Area
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="4">
+          <Accordion.Header>what is Bootstrap?</Accordion.Header>
+          <Accordion.Body>
+          Bootstrap is a free and open-source web development framework. It’s designed to ease the web development process of responsive, mobile-first websites by providing a collection of syntax for template designs.
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="5">
           <Accordion.Header>How does the private route work?</Accordion.Header>
           <Accordion.Body>
           Private Routes in React Router (also called Protected Routes) require a user being authorized to visit a route (read: page). So if a user is not authorized for a specific page, they cannot access it. The most common example is authentication in a React application where a user can only access the protected pages when they are authorized (which means in this case being authenticated). Authorization goes beyond authentication though. For example, a user can also have roles and permissions which give a user access to specific areas of the application.
           </Accordion.Body>
         </Accordion.Item>
-        <Accordion.Item eventKey="3">
-          <Accordion.Header>What is Node? How does Node work?</Accordion.Header>
+        <Accordion.Item eventKey="6">
+          <Accordion.Header>what is Tailwind css?</Accordion.Header>
           <Accordion.Body>
-          Node.js is a JavaScript runtime environment that achieves low latency and high throughput by taking a “non-blocking” approach to serving requests. In other words, Node.js wastes no time or resources on waiting for I/O requests to return.
-          In the traditional approach to creating web servers, for each incoming request or connection the server spawns a new thread of execution or even forks a new process to handle the request and send a response. Conceptually, this makes perfect sense, but in practice it incurs a great deal of overhead.
-
-While spawning threads incurs less memory and CPU overhead than forking processes, it can still be inefficient. The presence of a large number of threads can cause a heavily loaded system to spend precious cycles on thread scheduling and context switching, which adds latency and imposes limits on scalability and throughput.
+          Tailwind CSS is a utility-first CSS framework designed to enable users to create applications faster and easier. You can use utility classes to control the layout, color, spacing, typography, shadows, and more to create a completely custom component design — without leaving your HTML or writing a single line of custom CSS.
           </Accordion.Body>
         </Accordion.Item>
+        
 
       </Accordion>
+
         </div>
     );
 };

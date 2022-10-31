@@ -24,7 +24,7 @@ export const routes = createBrowserRouter([
             {
                 path:'/courses/:id',
                 element:<Course></Course>,
-                loader:({params})=>fetch(`http://localhost:5000/courses/${params.id}`)
+                loader:({params})=>fetch(`https://learn-programming-server-rosy.vercel.app/courses/${params.id}`)
                     
                 
             },
@@ -32,7 +32,7 @@ export const routes = createBrowserRouter([
             {
                 path:'/course',
                 element:<CoursesLayout></CoursesLayout>,
-                loader:()=>fetch(`http://localhost:5000/courses`)
+                loader:()=>fetch(`https://learn-programming-server-rosy.vercel.app/courses`)
                 
 
             },
@@ -47,7 +47,7 @@ export const routes = createBrowserRouter([
             {
                 path:'/checkOut/:id',
                 element:<PrivateRoutes><CheckOut></CheckOut></PrivateRoutes>,
-                loader:({params})=>fetch(`http://localhost:5000/courses/${params.id}`)
+                loader:({params})=>fetch(`https://learn-programming-server-rosy.vercel.app/courses/${params.id}`)
             },
             {
                 path:'/terms',
@@ -67,7 +67,7 @@ export const routes = createBrowserRouter([
     },
     {
         path:'*',
-        element:<div>no route found</div>
+        element:<h1>no route found for search item</h1>
     }
 
 ])
