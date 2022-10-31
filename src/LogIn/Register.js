@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link,  useNavigate } from 'react-router-dom';
+import { Link,  useLocation,  useNavigate } from 'react-router-dom';
 import  { AuthContext } from '../Context/AuthProvider/AuthProvider';
 const Register = () => {
     const navigate=useNavigate()
-    
+    const location = useLocation()
+const from = location.state?.from?.pathname || '/'
    
     const {creatUserEmailPasswod,updateUserProfile}=useContext(AuthContext)
     const [error,setError]=useState('');
@@ -27,7 +28,7 @@ const Register = () => {
             console.log(user)
             form.reset()
             setError('')
-            navigate('/');
+            navigate(from,{replace:true});
             updateUserInfoHandler(name,photoURL)
             
         })
